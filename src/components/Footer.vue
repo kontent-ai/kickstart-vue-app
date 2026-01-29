@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import Logo from './Logo.vue'
-import Navigation from './Navigation.vue'
-import Divider from './Divider.vue'
+import Divider from "./Divider.vue";
+import Logo from "./Logo.vue";
+import Navigation from "./Navigation.vue";
 </script>

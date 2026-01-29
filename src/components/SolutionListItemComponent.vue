@@ -39,15 +39,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { SolutionType } from '../model'
-import type { Replace } from '../utils/types'
+import { computed } from "vue";
+import type { SolutionType } from "../model";
+import type { Replace } from "../utils/types";
 
 type Props = {
-  solution: Replace<SolutionType, { elements: Partial<SolutionType['elements']> }>
-}
+  solution: Replace<SolutionType, { elements: Partial<SolutionType["elements"]> }>;
+};
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
-const shouldRender = computed(() => Object.entries(props.solution).length > 0)
+const shouldRender = computed(() => Object.entries(props.solution).length > 0);
 </script>

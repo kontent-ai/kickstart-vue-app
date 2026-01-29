@@ -21,14 +21,14 @@
 </template>
 
 <script setup lang="ts">
-import type { Elements } from '@kontent-ai/delivery-sdk'
-import { computed } from 'vue'
+import type { Elements } from "@kontent-ai/delivery-sdk";
+import { computed } from "vue";
 
 type Props = {
-  type: 'article' | 'event'
-  image?: Elements.AssetsElement
-}
+  type: "article" | "event";
+  image?: Elements.AssetsElement;
+};
 
-const props = defineProps<Props>()
-const img = computed(() => props.image?.value[0])
+const props = defineProps<Props>();
+const img = computed(() => props.image?.value[0]);
 </script>

@@ -12,29 +12,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useAppStore } from '../stores/app'
-import { createClient } from '../utils/client'
-import type { SolutionType } from '../model'
-import { DeliveryError } from '@kontent-ai/delivery-sdk'
-import SolutionListItemComponent from './SolutionListItemComponent.vue'
+import { DeliveryError } from "@kontent-ai/delivery-sdk";
+import { onMounted, ref } from "vue";
+import type { SolutionType } from "../model";
+import { useAppStore } from "../stores/app";
+import { createClient } from "../utils/client";
+import SolutionListItemComponent from "./SolutionListItemComponent.vue";
 
-const appStore = useAppStore()
-const solutions = ref<ReadonlyArray<SolutionType> | null>(null)
+const appStore = useAppStore();
+const solutions = ref<ReadonlyArray<SolutionType> | null>(null);
 
 onMounted(async () => {
   try {
     const res = await createClient(appStore.environmentId, appStore.apiKey)
       .items<SolutionType>()
-      .type('solution')
-      .toPromise()
-    solutions.value = res.data.items
+      .type("solution")
+      .toPromise();
+    solutions.value = res.data.items;
   } catch (err) {
     if (err instanceof DeliveryError) {
-      solutions.value = null
+      solutions.value = null;
     } else {
-      throw err
+      throw err;
     }
   }
-})
+});
 </script>

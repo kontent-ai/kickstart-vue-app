@@ -38,12 +38,12 @@
 </template>
 
 <script setup lang="ts">
-import type { Video as VideoType } from '../model'
-import type { Replace } from '../utils/types'
+import type { Video as VideoType } from "../model";
+import type { Replace } from "../utils/types";
 
 type Props = {
-  video: Replace<VideoType, { elements: Partial<VideoType['elements']> }>
-}
+  video: Replace<VideoType, { elements: Partial<VideoType["elements"]> }>;
+};
 
-defineProps<Props>()
+defineProps<Props>();
 </script>

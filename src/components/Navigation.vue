@@ -15,5 +15,5 @@
 </template>
 
 <script setup lang="ts">
-const menuItems = ['Solutions', 'Products', 'Pricing', 'Contact', 'Our Company']
+const menuItems = ["Solutions", "Products", "Pricing", "Contact", "Our Company"];
 </script>

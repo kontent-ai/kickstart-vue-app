@@ -58,30 +58,30 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import FeaturedComponentBase from './FeaturedComponentBase.vue'
-import type { EventType } from '../model'
-import { formatDate } from '../utils/date'
-import { transformToPortableText } from '@kontent-ai/rich-text-resolver'
-import { defaultPortableRichTextResolvers } from '../utils/richtext'
-import type { Replace } from '../utils/types'
-import { PortableText } from '@portabletext/vue'
+import { transformToPortableText } from "@kontent-ai/rich-text-resolver";
+import { PortableText } from "@portabletext/vue";
+import { computed } from "vue";
+import type { EventType } from "../model";
+import { formatDate } from "../utils/date";
+import { defaultPortableRichTextResolvers } from "../utils/richtext";
+import type { Replace } from "../utils/types";
+import FeaturedComponentBase from "./FeaturedComponentBase.vue";
 
 type Props = {
-  event: Replace<EventType, { elements: Partial<EventType['elements']> }>
-}
+  event: Replace<EventType, { elements: Partial<EventType["elements"]> }>;
+};
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
-const shouldRender = computed(() => Object.entries(props.event.elements).length > 0)
+const shouldRender = computed(() => Object.entries(props.event.elements).length > 0);
 
 const dateRange = computed(() => {
-  if (!props.event.elements.start_date?.value?.length) return ''
-  
-  const startDate = formatDate(props.event.elements.start_date.value as string)
-  
+  if (!props.event.elements.start_date?.value?.length) return "";
+
+  const startDate = formatDate(props.event.elements.start_date.value as string);
+
   return props.event.elements.end_date?.value?.length
     ? `${startDate} - ${formatDate(props.event.elements.end_date.value as string)}`
-    : startDate
-})
+    : startDate;
+});
 </script>
