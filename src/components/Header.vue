@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import Container from './Container.vue'
-import Logo from './Logo.vue'
-import Navigation from './Navigation.vue'
+import Container from "./Container.vue";
+import Logo from "./Logo.vue";
+import Navigation from "./Navigation.vue";
 </script>

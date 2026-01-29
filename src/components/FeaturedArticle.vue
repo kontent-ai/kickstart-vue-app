@@ -34,25 +34,28 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import FeaturedComponentBase from './FeaturedComponentBase.vue'
-import type { ArticleType } from '../model'
-import type { Replace } from '../utils/types'
+import { computed } from "vue";
+import type { ArticleType } from "../model";
+import type { Replace } from "../utils/types";
+import FeaturedComponentBase from "./FeaturedComponentBase.vue";
 
 type Props = {
-  article: Replace<ArticleType, { elements: Partial<ArticleType['elements']> }>
-}
+  article: Replace<ArticleType, { elements: Partial<ArticleType["elements"]> }>;
+};
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
-const shouldRender = computed(() => Object.entries(props.article.elements).length > 0)
+const shouldRender = computed(() => Object.entries(props.article.elements).length > 0);
 
 const publishedDateFormatted = computed(() => {
-  if (!props.article.elements.publish_date?.value) return ''
-  return `Published on ${new Date(props.article.elements.publish_date.value).toLocaleDateString('en-US', {
-    month: 'short',
-    year: 'numeric',
-    day: 'numeric',
-  })}`
-})
+  if (!props.article.elements.publish_date?.value) return "";
+  return `Published on ${new Date(props.article.elements.publish_date.value).toLocaleDateString(
+    "en-US",
+    {
+      month: "short",
+      year: "numeric",
+      day: "numeric",
+    },
+  )}`;
+});
 </script>

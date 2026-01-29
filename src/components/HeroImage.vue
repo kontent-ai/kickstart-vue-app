@@ -28,15 +28,15 @@
 </template>
 
 <script setup lang="ts">
-import type { Elements } from '@kontent-ai/delivery-sdk'
+import type { Elements } from "@kontent-ai/delivery-sdk";
 
 type Props = {
   data: {
-    headline?: Elements.TextElement
-    subheadline?: Elements.TextElement
-    heroImage?: Elements.AssetsElement
-  }
-}
+    headline?: Elements.TextElement;
+    subheadline?: Elements.TextElement;
+    heroImage?: Elements.AssetsElement;
+  };
+};
 
-defineProps<Props>()
+defineProps<Props>();
 </script>

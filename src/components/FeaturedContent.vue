@@ -23,19 +23,19 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { isArticleType, isEventType, type LandingPageType } from '../model'
-import PageSection from './PageSection.vue'
-import FeaturedArticle from './FeaturedArticle.vue'
-import FeaturedEvent from './FeaturedEvent.vue'
-import Divider from './Divider.vue'
+import { computed } from "vue";
+import { isArticleType, isEventType, type LandingPageType } from "../model";
+import Divider from "./Divider.vue";
+import FeaturedArticle from "./FeaturedArticle.vue";
+import FeaturedEvent from "./FeaturedEvent.vue";
+import PageSection from "./PageSection.vue";
 
 type Props = {
-  featuredContent: LandingPageType['elements']['featured_content']
-}
+  featuredContent: LandingPageType["elements"]["featured_content"];
+};
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
-const featuredArticle = computed(() => props.featuredContent.linkedItems.find(isArticleType))
-const featuredEvent = computed(() => props.featuredContent.linkedItems.find(isEventType))
+const featuredArticle = computed(() => props.featuredContent.linkedItems.find(isArticleType));
+const featuredEvent = computed(() => props.featuredContent.linkedItems.find(isEventType));
 </script>
